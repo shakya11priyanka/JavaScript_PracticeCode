@@ -2,3 +2,5 @@
 "# Qvantel_Training_JavaScriptCode" 
 "# Qvantel_Training_JavaScriptCode" 
 "# Qvantel_Training_JavaScriptCode" 
+"# JavaScript_PracticeCode" 
+"# JavaScript_PracticeCode" 
