@@ -18,3 +18,4 @@ if(markHigherBMI===true){
 else
 {
   console.log("John has higher BMI");
+}
