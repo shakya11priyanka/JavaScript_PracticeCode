@@ -1,54 +1,69 @@
 
-const restaurant = {
-  name : 'Qvantel',
-  location : "Twiza Building, highTech Road",
-  categories : ['Italian', 'Chinese', 'Indian', 'Western'],
-  starterMenu: ['Salad', 'Bread', 'Sandwitch'],
-  Mainmenu: ['Idli', 'Dosa', 'Uttapam'],
+// const restaurant = {
+//   name : 'Qvantel',
+//   location : "Twiza Building, highTech Road",
+//   categories : ['Italian', 'Chinese', 'Indian', 'Western'],
+//   starterMenu: ['Salad', 'Bread', 'Sandwitch'],
+//   Mainmenu: ['Idli', 'Dosa', 'Uttapam'],
+//
+//   order : function(starterIndex, mainIndex){
+//       return[this.starterMenu[starterIndex], this.Mainmenu[mainIndex]];
+//   },
+//
+// };
+//
+//
+// let [first, ,second] =restaurant.categories;
+//
+// console.log(first, second);
+//
+// const temp=first;
+// first=second;
+// second=temp;
+//
+// console.log(first, second);
+// console.log(restaurant.order(2,0));
+//
+// const {name, categories} = restaurant;
+// console.log(name,categories);
+//
+// const {name: restaurant_name, categories: food_Categories} = restaurant;
+// console.log (restaurant_name, food_Categories);
+//
+// const {menu = [], starterMenu : starter = [], }=restaurant;
+// console.log(menu, starter);
+//
+// let a=111;
+// let b=99;
+//
+// const obj = {a:23, b:7, c:56};
+// ({a,b} = obj);
+// console.log( a,b );
 
-  order : function(starterIndex, mainIndex){
-      return[this.starterMenu[starterIndex], this.Mainmenu[mainIndex]];
-  },
 
-};
-
-
-let [first, ,second] =restaurant.categories;
-
-console.log(first, second);
-
-const temp=first;
-first=second;
-second=temp;
-
-console.log(first, second);
-console.log(restaurant.order(2,0));
+function fun(a, b){
+        return a + b;
+    }
+    console.log(fun(1, 2)); // 3
+    console.log(fun(1, 2, 3, 4, 5));
 
 
-const x = [1, 2, 3, 4, 5];
-const [y, z] = x;
-console.log(y);
-console.log(z);
+    function fun(...input){
+        let sum = 0;
+        for(let i of input){
+            sum+=i;
+        }
+        return sum;
+    }
+    console.log(fun(1,2)); //3
+    console.log(fun(1,2,3)); //6
+    console.log(fun(1,2,3,4,5)); //15
 
-const obj = { a: 1, b: { c: 2 } };
-const {
-  a,
-  b: { c: d },
-} = obj;
-
-const obj = { a: 1, b: { c: 2 } };
-const { a } = obj;
-let {
-  b: { c: d },
-} = obj;
-
-const numbers = [];
-const obj = { a: 1, b: 2 };
-({ a: numbers[0], b: numbers[1] } = obj);
-
-const foo = ["one", "two", "three"];
-
-const [red, yellow, green] = foo;
-console.log(red); // "one"
-console.log(yellow); // "two"
-console.log(green); // "three"
+    function fun(a,b,...c){
+        console.log(`${a} ${b}`); //Mukul Latiyan
+        console.log(c);  //[ 'Lionel', 'Messi', 'Barcelona' ]
+        console.log(c[0]); //Lionel
+        console.log(c.length); //3
+        console.log(c.indexOf('Lionel')); //0
+    }
+    fun('Mukul','Latiyan','Lionel','Messi','Barcelona');
