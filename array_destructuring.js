@@ -40,30 +40,48 @@
 // ({a,b} = obj);
 // console.log( a,b );
 
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false,
+};
 
-function fun(a, b){
-        return a + b;
-    }
-    console.log(fun(1, 2)); // 3
-    console.log(fun(1, 2, 3, 4, 5));
+console.log(Object.keys(object1));
 
+const arr = ["a", "b", "c"];
+console.log(Object.keys(arr)); // ['0', '1', '2']
 
-    function fun(...input){
-        let sum = 0;
-        for(let i of input){
-            sum+=i;
-        }
-        return sum;
-    }
-    console.log(fun(1,2)); //3
-    console.log(fun(1,2,3)); //6
-    console.log(fun(1,2,3,4,5)); //15
+// Array-like object
+const obj = { 0: "a", 1: "b", 2: "c" };
+console.log(Object.keys(obj)); // ['0', '1', '2']
 
-    function fun(a,b,...c){
-        console.log(`${a} ${b}`); //Mukul Latiyan
-        console.log(c);  //[ 'Lionel', 'Messi', 'Barcelona' ]
-        console.log(c[0]); //Lionel
-        console.log(c.length); //3
-        console.log(c.indexOf('Lionel')); //0
-    }
-    fun('Mukul','Latiyan','Lionel','Messi','Barcelona');
+// Array-like object with random key ordering
+const anObj = { 100: "a", 2: "b", 7: "c" };
+console.log(Object.keys(anObj)); // ['2', '7', '100']
+
+// getFoo is a non-enumerable property
+const myObj = Object.create(
+  {},
+  {
+    getFoo: {
+      value() {
+        return this.foo;
+      },
+    },
+  },
+);
+myObj.foo = 1;
+console.log(Object.keys(myObj));
+
+const object1 = {};
+
+Object.preventExtensions(object1);
+
+try {
+  Object.defineProperty(object1, 'property1', {
+    value: 42,
+  });
+} catch (e) {
+  console.log(e);
+  
+}
